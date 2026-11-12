@@ -1,29 +1,36 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-TW" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>index.html</title>
+    <title>吳采恩 Tsai-En Wu - 個人網頁</title>
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- 外部獨立 CSS 樣式表 -->
+    <link rel="stylesheet" href="style.css">
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
                         tea: {
-                            50: '#FDFBF7',   
-                            100: '#F5EFE6',  
-                            200: '#E8DCCF',  
-                            300: '#D5C4B1',  
-                            400: '#C5A898',  
-                            500: '#8C7A6B', 
-                            600: '#5C4A3E', 
-                            700: '#403229',  
+                            50: '#FDFBF7',
+                            100: '#F5EFE6',
+                            200: '#E8DCCF',
+                            300: '#D5C4B1',
+                            400: '#C5A898',
+                            500: '#8C7A6B',
+                            600: '#5C4A3E',
+                            700: '#403229',
                         }
                     },
                     fontFamily: {
@@ -34,24 +41,11 @@
             }
         }
     </script>
-    <style>
-        .a4-container {
-            width: 210mm;
-            min-height: 297mm;
-            max-width: 100%;
-        }
-        @media (max-width: 768px) {
-            .a4-container {
-                width: 100%;
-                min-height: auto;
-            }
-        }
-    </style>
 </head>
 <body class="bg-gray-200 text-tea-700 font-sans antialiased min-h-screen py-6 flex flex-col items-center justify-center">
 
     <!-- 頂部作業標籤說明 -->
-    <div class="mb-4 text-center">
+    <div class="mb-4 text-center animate-fade-in">
         <span class="text-xs font-mono font-bold text-gray-600 bg-white/80 px-4 py-1.5 rounded-full shadow-sm">
             吳采恩的個人網頁
         </span>
@@ -61,24 +55,25 @@
     <div class="a4-container bg-tea-50 border border-gray-300 rounded-sm shadow-xl p-8 sm:p-10 flex flex-col justify-between space-y-5 relative">
 
         <!-- 1. 導覽列 NAVIGATION BAR -->
-        <div class="relative pt-2">
+        <div class="relative pt-2 animate-fade-in">
             <nav class="bg-white border border-tea-200 rounded-xl p-3.5 flex justify-between items-center shadow-sm">
                 <div class="font-bold text-base text-tea-600 tracking-wide">
                     吳采恩 Tsai-En Wu
                 </div>
                 <div class="flex gap-5 text-xs font-medium text-tea-500">
-                    <a href="#home" class="hover:text-tea-600 transition">首頁</a>
-                    <a href="#about-and-skills" class="hover:text-tea-600 transition">關於我</a>
-                    <a href="#about-and-skills" class="hover:text-tea-600 transition">技能</a>
-                    <a href="#projects-gallery" class="hover:text-tea-600 transition">作品經歷</a>
-                    <a href="#contact-info" class="hover:text-tea-600 transition">聯絡我</a>
+                    <a href="#home" class="nav-link hover:text-tea-600 transition">首頁</a>
+                    <a href="#about-and-skills" class="nav-link hover:text-tea-600 transition">關於我</a>
+                    <a href="#about-and-skills" class="nav-link hover:text-tea-600 transition">技能</a>
+                    <a href="#projects-gallery" class="nav-link hover:text-tea-600 transition">作品經歷</a>
+                    <a href="#contact-info" class="nav-link hover:text-tea-600 transition">聯絡我</a>
                 </div>
             </nav>
         </div>
 
         <!-- 2. 首頁 HEADER / HERO SECTION -->
-        <div class="relative pt-2" id="home">
+        <div class="relative pt-2 animate-fade-in delay-100" id="home">
             <header class="bg-white border border-tea-200 rounded-xl p-6 shadow-sm flex items-center justify-between gap-6">
+                
                 <!-- 左邊：文字簡介 -->
                 <div class="flex-1 space-y-3">
                     <span class="px-3 py-0.5 bg-tea-100 text-tea-600 rounded-full text-xs font-medium inline-block">
@@ -91,19 +86,24 @@
                         歡迎來到我的個人網站！這裡展示我的學習歷程、網頁設計作品與個人技能。
                     </p>
                     <div class="pt-1 flex gap-2.5 text-xs">
-                        <a href="#contact-info" class="px-3.5 py-1.5 bg-tea-400 text-white rounded-lg font-medium shadow-sm hover:bg-tea-500 transition inline-block">聯絡我</a>
-                        <a href="javascript:void(0)" onclick="alert('履歷下載中...')" class="px-3.5 py-1.5 bg-tea-100 text-tea-600 rounded-lg font-medium border border-tea-200 hover:bg-tea-200 transition inline-block">下載履歷</a>
+                        <a href="#contact-info" class="px-3.5 py-1.5 bg-tea-400 text-white rounded-lg font-medium shadow-sm hover:bg-tea-500 hover:-translate-y-0.5 active:scale-95 transition-all duration-200 inline-block">
+                            聯絡我
+                        </a>
+                        <a href="javascript:void(0)" onclick="alert('履歷下載中...')" class="px-3.5 py-1.5 bg-tea-100 text-tea-600 rounded-lg font-medium border border-tea-200 hover:bg-tea-200 hover:-translate-y-0.5 active:scale-95 transition-all duration-200 inline-block">
+                            下載履歷
+                        </a>
                     </div>
                 </div>
 
                 <!-- 右邊：大頭照顯示區 -->
-                <div onclick="openLightbox('image/首頁大頭照_2.jpg', '吳采恩個人大頭照')" 
-                     class="w-36 h-44 bg-tea-100 border-2 border-dashed border-tea-300 rounded-xl flex flex-col items-center justify-center text-tea-400 shrink-0 overflow-hidden relative group shadow-sm cursor-pointer">
-                    <img src="image/photo5.jpg" alt="吳采恩" class="w-full h-full object-cover object-top transform transition duration-300 group-hover:scale-105" onerror="this.onerror=null; this.parentNode.innerHTML='<div class=\'flex flex-col items-center justify-center text-tea-400 text-[10px] h-full p-2 text-center\'><i class=\'fa-regular fa-image text-xl mb-1\'></i><span>首頁大頭照_2.jpg</span></div>';" />
-                    <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white text-xs gap-1 font-medium">
+                <div onclick="openLightbox('image/photo5.jpg', '吳采恩個人大頭照')" 
+                     class="w-36 h-44 bg-tea-100 border-2 border-dashed border-tea-300 rounded-xl flex flex-col items-center justify-center text-tea-400 shrink-0 overflow-hidden relative group shadow-sm cursor-pointer hover:border-tea-400 transition-colors">
+                    <img src="image/photo5.jpg" alt="吳采恩" class="w-full h-full object-cover object-top transform transition duration-300 group-hover:scale-105" onerror="this.onerror=null; this.parentNode.innerHTML='<div class=\'flex flex-col items-center justify-center text-tea-400 text-[10px] h-full p-2 text-center\'><i class=\'fa-regular fa-image text-xl mb-1\'></i><span>photo5.jpg</span></div>';" />
+                    <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white text-xs gap-1 font-medium">
                         <i class="fa-solid fa-magnifying-glass-plus"></i> 點擊放大
                     </div>
                 </div>
+
             </header>
         </div>
 
@@ -111,17 +111,17 @@
         <div class="relative pt-2 flex-1 flex flex-col justify-between space-y-4">
             <main class="space-y-4 pt-1">
 
-                <!-- 3. 關於我與核心技能區塊 SECTION -->
-                <div class="relative pt-2" id="about-and-skills">
+                <!-- 3. 關於我與核心技能區塊 -->
+                <div class="relative pt-2 animate-fade-in delay-200" id="about-and-skills">
                     <section class="bg-white border border-tea-200 rounded-xl p-4 shadow-sm space-y-3">
                         <h3 class="text-sm font-bold text-tea-600 border-b border-tea-100 pb-1.5 flex items-center justify-between">
                             <span>關於我與核心技能</span>
                             <span class="text-[10px] text-tea-400 font-mono">About & Core Skills</span>
                         </h3>
 
-                        <div class="grid grid-cols-2 gap-3">
-                            <!-- 關於我內容 -->
-                            <div class="bg-tea-50 p-3 rounded-lg border border-tea-100 space-y-1 text-xs">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <!-- 基本資料 -->
+                            <div class="bg-tea-50 p-3 rounded-lg border border-tea-100 space-y-1 text-xs hover:border-tea-300 transition-colors duration-300">
                                 <h4 class="font-bold text-tea-600 mb-1">基本資料</h4>
                                 <p><span class="text-tea-400">姓名：</span>吳采恩</p>
                                 <p><span class="text-tea-400">生日：</span>2006/10/18</p>
@@ -132,64 +132,63 @@
                                 <p><span class="text-tea-400">我的slogan：</span>相信自己，妳正走在最好的路上。</p>
                             </div>
 
-                            <!-- 核心技能 (CSS 進度條) -->
-                            <div class="bg-tea-50 p-3 rounded-lg border border-tea-100 space-y-1 text-xs">
+                            <!-- 核心技能 -->
+                            <div class="bg-tea-50 p-3 rounded-lg border border-tea-100 space-y-1 text-xs hover:border-tea-300 transition-colors duration-300">
                                 <h4 class="font-bold text-tea-600 mb-3">核心技能</h4>
                                 
                                 <div class="space-y-3">
-                                    <!-- HTML 技能進度條 -->
+                                    <!-- HTML -->
                                     <div class="group cursor-pointer">
                                         <div class="flex justify-between text-[11px] font-medium text-tea-600 mb-1">
-                                            <span>HTML</span>
+                                            <span class="group-hover:translate-x-1 transition-transform duration-200">HTML</span>
                                             <span>90%</span>
                                         </div>
-                                        <!-- /*[特效]滑鼠移到進度條時加深顏色 - 使用 transition + hover */ -->
                                         <div class="w-full bg-tea-200 rounded-full h-1.5 overflow-hidden">
-                                            <div class="bg-tea-400 h-1.5 rounded-full transition-colors duration-300 group-hover:bg-tea-600" style="width: 90%"></div>
+                                            <div class="skill-bar-fill bg-tea-400 h-1.5 rounded-full transition-colors duration-300 group-hover:bg-tea-600" style="width: 90%"></div>
                                         </div>
                                     </div>
 
-                                    <!-- CSS 技能進度條 -->
+                                    <!-- CSS -->
                                     <div class="group cursor-pointer">
                                         <div class="flex justify-between text-[11px] font-medium text-tea-600 mb-1">
-                                            <span>CSS</span>
+                                            <span class="group-hover:translate-x-1 transition-transform duration-200">CSS</span>
                                             <span>85%</span>
                                         </div>
                                         <div class="w-full bg-tea-200 rounded-full h-1.5 overflow-hidden">
-                                            <div class="bg-tea-400 h-1.5 rounded-full transition-colors duration-300 group-hover:bg-tea-600" style="width: 85%"></div>
+                                            <div class="skill-bar-fill bg-tea-400 h-1.5 rounded-full transition-colors duration-300 group-hover:bg-tea-600" style="width: 85%"></div>
                                         </div>
                                     </div>
 
-                                    <!-- JavaScript 技能進度條 -->
+                                    <!-- JavaScript -->
                                     <div class="group cursor-pointer">
                                         <div class="flex justify-between text-[11px] font-medium text-tea-600 mb-1">
-                                            <span>JavaScript</span>
+                                            <span class="group-hover:translate-x-1 transition-transform duration-200">JavaScript</span>
                                             <span>70%</span>
                                         </div>
                                         <div class="w-full bg-tea-200 rounded-full h-1.5 overflow-hidden">
-                                            <div class="bg-tea-400 h-1.5 rounded-full transition-colors duration-300 group-hover:bg-tea-600" style="width: 70%"></div>
+                                            <div class="skill-bar-fill bg-tea-400 h-1.5 rounded-full transition-colors duration-300 group-hover:bg-tea-600" style="width: 70%"></div>
                                         </div>
                                     </div>
 
-                                    <!-- Python 技能進度條 -->
+                                    <!-- Python -->
                                     <div class="group cursor-pointer">
                                         <div class="flex justify-between text-[11px] font-medium text-tea-600 mb-1">
-                                            <span>Python</span>
+                                            <span class="group-hover:translate-x-1 transition-transform duration-200">Python</span>
                                             <span>75%</span>
                                         </div>
                                         <div class="w-full bg-tea-200 rounded-full h-1.5 overflow-hidden">
-                                            <div class="bg-tea-400 h-1.5 rounded-full transition-colors duration-300 group-hover:bg-tea-600" style="width: 75%"></div>
+                                            <div class="skill-bar-fill bg-tea-400 h-1.5 rounded-full transition-colors duration-300 group-hover:bg-tea-600" style="width: 75%"></div>
                                         </div>
                                     </div>
 
-                                    <!-- Photoshop 技能進度條 -->
+                                    <!-- Photoshop -->
                                     <div class="group cursor-pointer">
                                         <div class="flex justify-between text-[11px] font-medium text-tea-600 mb-1">
-                                            <span>Photoshop</span>
+                                            <span class="group-hover:translate-x-1 transition-transform duration-200">Photoshop</span>
                                             <span>80%</span>
                                         </div>
                                         <div class="w-full bg-tea-200 rounded-full h-1.5 overflow-hidden">
-                                            <div class="bg-tea-400 h-1.5 rounded-full transition-colors duration-300 group-hover:bg-tea-600" style="width: 80%"></div>
+                                            <div class="skill-bar-fill bg-tea-400 h-1.5 rounded-full transition-colors duration-300 group-hover:bg-tea-600" style="width: 80%"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -198,21 +197,20 @@
                     </section>
                 </div>
 
-                <!-- 4. 作品與經歷區塊 (四格照片展示區) SECTION -->
-                <div class="relative pt-2" id="projects-gallery">
+                <!-- 4. 作品與經歷區塊 (四格照片展示區) -->
+                <div class="relative pt-2 animate-fade-in delay-300" id="projects-gallery">
                     <section class="bg-white border border-tea-200 rounded-xl p-4 shadow-sm space-y-3">
                         <h3 class="text-sm font-bold text-tea-600 border-b border-tea-100 pb-1.5 flex items-center justify-between">
                             <span>作品與經歷 (點擊照片可放大檢視)</span>
                             <span class="text-[10px] text-tea-400 font-mono">Photo Gallery Grid</span>
                         </h3>
 
-                        <!-- 2x2 四格照片網格 -->
-                        <div class="grid grid-cols-2 gap-3">
-                            <!-- 照片 1：左上 (海報製作) -->
-                            <div class="bg-tea-50 p-2.5 rounded-lg border border-tea-200 space-y-1.5 flex flex-col justify-between">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <!-- 作品 1 -->
+                            <div class="project-card bg-tea-50 p-2.5 rounded-lg border border-tea-200 space-y-1.5 flex flex-col justify-between">
                                 <div onclick="openLightbox('image/photo1.jpg', 'Photoshop 以及 Illustrator 應用海報製作')" class="h-28 bg-tea-100 rounded border border-dashed border-tea-300 overflow-hidden relative group cursor-pointer flex flex-col items-center justify-center">
                                     <img src="image/photo1.jpg" alt="海報製作" class="w-full h-full object-cover transform transition duration-300 group-hover:scale-105" onerror="this.onerror=null; this.parentNode.innerHTML='<div class=\'flex flex-col items-center justify-center text-tea-400 text-[10px] h-full\'><i class=\'fa-regular fa-image text-sm mb-1\'></i><span>photo1.jpg</span></div>';" />
-                                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white text-xs gap-1 font-medium">
+                                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white text-xs gap-1 font-medium">
                                         <i class="fa-solid fa-magnifying-glass-plus"></i> 點擊放大
                                     </div>
                                 </div>
@@ -222,11 +220,11 @@
                                 </div>
                             </div>
 
-                            <!-- 照片 2：右上 (程式方塊選寫) -->
-                            <div class="bg-tea-50 p-2.5 rounded-lg border border-tea-200 space-y-1.5 flex flex-col justify-between">
+                            <!-- 作品 2 -->
+                            <div class="project-card bg-tea-50 p-2.5 rounded-lg border border-tea-200 space-y-1.5 flex flex-col justify-between">
                                 <div onclick="openLightbox('image/photo2.jpg', 'App Inventor 程式方塊選寫')" class="h-28 bg-tea-100 rounded border border-dashed border-tea-300 overflow-hidden relative group cursor-pointer flex flex-col items-center justify-center">
                                     <img src="image/photo2.jpg" alt="程式方塊選寫" class="w-full h-full object-cover transform transition duration-300 group-hover:scale-105" onerror="this.onerror=null; this.parentNode.innerHTML='<div class=\'flex flex-col items-center justify-center text-tea-400 text-[10px] h-full\'><i class=\'fa-regular fa-image text-sm mb-1\'></i><span>photo2.jpg</span></div>';" />
-                                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white text-xs gap-1 font-medium">
+                                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white text-xs gap-1 font-medium">
                                         <i class="fa-solid fa-magnifying-glass-plus"></i> 點擊放大
                                     </div>
                                 </div>
@@ -236,11 +234,11 @@
                                 </div>
                             </div>
 
-                            <!-- 照片 3：左下 (中原大學營隊) -->
-                            <div class="bg-tea-50 p-2.5 rounded-lg border border-tea-200 space-y-1.5 flex flex-col justify-between">
+                            <!-- 作品 3 -->
+                            <div class="project-card bg-tea-50 p-2.5 rounded-lg border border-tea-200 space-y-1.5 flex flex-col justify-between">
                                 <div onclick="openLightbox('image/photo3.jpg', '科技領袖人才培育營')" class="h-28 bg-tea-100 rounded border border-dashed border-tea-300 overflow-hidden relative group cursor-pointer flex flex-col items-center justify-center">
                                     <img src="image/photo3.jpg" alt="中原大學營隊" class="w-full h-full object-cover transform transition duration-300 group-hover:scale-105" onerror="this.onerror=null; this.parentNode.innerHTML='<div class=\'flex flex-col items-center justify-center text-tea-400 text-[10px] h-full\'><i class=\'fa-regular fa-image text-sm mb-1\'></i><span>photo3.jpg</span></div>';" />
-                                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white text-xs gap-1 font-medium">
+                                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white text-xs gap-1 font-medium">
                                         <i class="fa-solid fa-magnifying-glass-plus"></i> 點擊放大
                                     </div>
                                 </div>
@@ -250,11 +248,11 @@
                                 </div>
                             </div>
 
-                            <!-- 照片 4：右下 (自走車) -->
-                            <div class="bg-tea-50 p-2.5 rounded-lg border border-tea-200 space-y-1.5 flex flex-col justify-between">
+                            <!-- 作品 4 -->
+                            <div class="project-card bg-tea-50 p-2.5 rounded-lg border border-tea-200 space-y-1.5 flex flex-col justify-between">
                                 <div onclick="openLightbox('image/photo4.jpg', '樹莓派聲控車組裝')" class="h-28 bg-tea-100 rounded border border-dashed border-tea-300 overflow-hidden relative group cursor-pointer flex flex-col items-center justify-center">
                                     <img src="image/photo4.jpg" alt="自走車" class="w-full h-full object-cover transform transition duration-300 group-hover:scale-105" onerror="this.onerror=null; this.parentNode.innerHTML='<div class=\'flex flex-col items-center justify-center text-tea-400 text-[10px] h-full\'><i class=\'fa-regular fa-image text-sm mb-1\'></i><span>photo4.jpg</span></div>';" />
-                                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white text-xs gap-1 font-medium">
+                                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white text-xs gap-1 font-medium">
                                         <i class="fa-solid fa-magnifying-glass-plus"></i> 點擊放大
                                     </div>
                                 </div>
@@ -270,27 +268,27 @@
             </main>
         </div>
 
-       <!-- 5. 頁尾 FOOTER -->
-       <div class="relative pt-2" id="contact-info">
-        <footer class="bg-white border border-tea-200 rounded-xl p-4 text-center shadow-sm space-y-2">
-            <h3 class="font-bold text-xs text-tea-600">聯絡資訊 (Contact Info)</h3>
-            <p class="text-[11px] text-tea-500 font-mono">
-                Email: <a href="mailto:zanewu951018@gmail.com" class="underline hover:text-tea-700 transition">zanewu951018@gmail.com</a> | 
-                GitHub: <a href="https://github.com/tsaien-wu" target="_blank" class="underline hover:text-tea-700 transition">GitHub</a> | 
-                Instagram: <a href="https://www.instagram.com/cnn.1018/" target="_blank" class="underline hover:text-tea-700 transition">Instagram</a>
-            </p>
-            <p class="text-[10px] text-tea-400 border-t border-tea-100 pt-2">
-                © 2026 吳采恩 Tsai-En Wu - 個人網頁
-            </p>
-        </footer>
-    </div>
+        <!-- 5. 頁尾 FOOTER -->
+        <div class="relative pt-2 animate-fade-in delay-400" id="contact-info">
+            <footer class="bg-white border border-tea-200 rounded-xl p-4 text-center shadow-sm space-y-2">
+                <h3 class="font-bold text-xs text-tea-600">聯絡資訊 (Contact Info)</h3>
+                <p class="text-[11px] text-tea-500 font-mono">
+                    Email: <a href="mailto:zanewu951018@gmail.com" class="underline hover:text-tea-700 transition">zanewu951018@gmail.com</a> | 
+                    GitHub: <a href="https://zanewu95.github.io/portfolio/" target="_blank" class="underline hover:text-tea-700 transition">GitHub</a> | 
+                    Instagram: <a href="https://www.instagram.com/cnn.1018/" target="_blank" class="underline hover:text-tea-700 transition">Instagram</a>
+                </p>
+                <p class="text-[10px] text-tea-400 border-t border-tea-100 pt-2">
+                    © 2026 吳采恩 Tsai-En Wu - 個人網頁
+                </p>
+            </footer>
+        </div>
 
     </div>
 
     <!-- 照片放大檢視燈箱 (Lightbox Modal) -->
     <div id="lightbox" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex flex-col items-center justify-center p-4" onclick="closeLightbox()">
-        <button onclick="closeLightbox()" class="absolute top-4 right-6 text-white text-3xl font-bold hover:text-gray-300 transition">&times;</button>
-        <div class="max-w-3xl max-h-[85vh] p-2 bg-white rounded-xl shadow-2xl flex flex-col items-center space-y-2" onclick="event.stopPropagation()">
+        <button onclick="closeLightbox()" class="absolute top-4 right-6 text-white text-3xl font-bold hover:text-gray-300 hover:rotate-90 transition-all duration-300">&times;</button>
+        <div class="lightbox-content max-w-3xl max-h-[85vh] p-2 bg-white rounded-xl shadow-2xl flex flex-col items-center space-y-2" onclick="event.stopPropagation()">
             <img id="lightbox-img" src="" alt="放大檢視" class="max-h-[75vh] w-auto object-contain rounded-lg" />
             <p id="lightbox-caption" class="text-tea-700 font-bold text-sm pt-1"></p>
         </div>

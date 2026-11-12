@@ -1,0 +1,111 @@
+/* =========================================
+   1. 版面基礎設定 (A4 紙張比例)
+   ========================================= */
+   .a4-container {
+    width: 210mm;
+    min-height: 297mm;
+    max-width: 100%;
+}
+
+/* 當螢幕尺寸較小時改為滿版，適應行動裝置 */
+@media (max-width: 768px) {
+    .a4-container {
+        width: 100%;
+        min-height: auto;
+    }
+}
+
+
+/* =========================================
+   2. 基礎動態特效與動畫
+   ========================================= */
+
+/* [特效 A] 區塊由下往上淡入動畫定義 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        top: 20px;
+    }
+    to {
+        opacity: 1;
+        top: 0;
+    }
+}
+
+/* 套用淡入動畫的類別 */
+.animate-fade-in {
+    opacity: 0;
+    position: relative;
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+/* 依序延遲進場時間，營造層次感 */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+
+
+/* [特效 B] 技能進度條寬度展開動畫 */
+@keyframes expandBar {
+    from {
+        width: 0%;
+    }
+}
+
+.skill-bar-fill {
+    animation: expandBar 1.2s ease forwards;
+    animation-delay: 0.4s;
+}
+
+
+/* [特效 C] 作品卡片滑鼠懸停時微幅浮起與陰影效果 */
+.project-card {
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px); /* 向上浮起 4px */
+    box-shadow: 0 8px 16px rgba(92, 74, 62, 0.1); /* 加上柔和陰影 */
+    border-color: #C5A898; /* 邊框變色 */
+}
+
+
+/* [特效 D] 導覽列連結底部滑動底線特效 */
+.nav-link {
+    position: relative;
+    padding-bottom: 2px;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #8C7A6B;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+    width: 100%; /* 滑鼠移入時底線從中間向兩側展開 */
+}
+
+
+/* [特效 E] 圖片燈箱彈出時的縮放淡入動畫 */
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.lightbox-content {
+    animation: zoomIn 0.3s ease forwards;
+}
